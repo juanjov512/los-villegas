@@ -35,6 +35,7 @@ const Button = styled.a<IButtonProps>`
   font-weight: 500;
   max-height: 48px;
   width: ${(props) => (props.size === "large" ? "100%" : "auto")};
+  min-width: 120px;
   box-shadow: 0 1px 8px rgba(0,0,0,.16);
 
   &:hover {
