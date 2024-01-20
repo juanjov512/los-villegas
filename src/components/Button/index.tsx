@@ -1,13 +1,20 @@
-import React, { PropsWithChildren } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 import { Button as StyledButton } from "./styles";
-import { IButtonProps } from "./types";
+import { IButtonComponentProps } from "./types";
 
-const Button: React.FC<PropsWithChildren<IButtonProps>> = ({
-  children,
+const Button: React.FC<IButtonComponentProps> = ({
+  text,
+  icon,
   ...props
-}: PropsWithChildren<IButtonProps>): JSX.Element => {
-  return <StyledButton {...props}>{children}</StyledButton>;
+}: IButtonComponentProps): JSX.Element => {
+  return (
+    <StyledButton {...props}>
+      {text} &nbsp;
+      {icon && <FontAwesomeIcon icon={icon} />}
+    </StyledButton>
+  );
 };
 
 export default Button;
