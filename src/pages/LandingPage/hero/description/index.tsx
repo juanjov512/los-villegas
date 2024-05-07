@@ -10,7 +10,7 @@ const Description: React.FC = (): JSX.Element => {
   hartón de la más alta calidad para satisfacer las demandas de tu 
   establecimiento!`;
 
-  const title = `Plátanos Frescos de Calidad al Mejor Precio`;
+  const title = `Plátanos frescos, calidad directa del campo`;
 
   return (
     <Container>
