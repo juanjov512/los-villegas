@@ -1,0 +1,46 @@
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family:
+    Brandon Text,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    Helvetica Neue,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  padding: 0 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: #343434;
+}
