@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { type JSX } from "react";
 
+import PlatanosImg from "@/assets/images/platanos-maduros.jpg";
 import Button from "@/components/button";
 import { Container } from "@/components/container/styles";
 
@@ -12,7 +13,7 @@ const Contact: React.FC = (): JSX.Element => {
   const title = "!Llévanos en tu agenda!";
 
   return (
-    <Container id={"contact"} minHeight={"25rem"}>
+    <Container id={"contact"} $minHeight={"25rem"}>
       <ImageContainer>
         <Card>
           <Title>{title}</Title>
@@ -20,12 +21,14 @@ const Contact: React.FC = (): JSX.Element => {
           <Button text={"Agendar"} color={"secondary"} size={"2xl"} />
         </Card>
         <Image
-          src="/images/platanos-maduros.jpg"
+          src={PlatanosImg}
+          placeholder="blur"
           alt="Logo"
           fill
-          priority
-          objectFit="cover"
-          objectPosition="center"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
         />
       </ImageContainer>
     </Container>

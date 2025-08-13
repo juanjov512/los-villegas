@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import PlantainLogoImg from "@/assets/images/plantain_logo.png";
+
 import { Container, CircleTextContainer, CircleTextSVG } from "./styles";
 
 const LogoWithText: React.FC = () => {
@@ -21,18 +23,17 @@ const LogoWithText: React.FC = () => {
           </text>
         </CircleTextSVG>
         <Image
-          src="/images/plantain_logo.png"
+          src={PlantainLogoImg}
           alt="Logo"
           width={170}
           height={170}
+          placeholder="blur"
           style={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
           }}
-          objectFit="cover"
-          objectPosition="center"
         />
       </CircleTextContainer>
     </Container>

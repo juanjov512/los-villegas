@@ -4,7 +4,7 @@ interface ILink {
 }
 
 interface INavbarProps {
-  links: ILink[]
+  links: ILink[];
 }
 
 export type { INavbarProps };

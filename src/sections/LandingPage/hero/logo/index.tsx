@@ -2,6 +2,8 @@ import { faForward } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import React, { type JSX } from "react";
 
+import headerImg from "@/assets/images/header.png";
+
 import {
   IconCircle,
   ImageContainer,
@@ -16,11 +18,14 @@ const Logo: React.FC = (): JSX.Element => {
         <StyledFontAwesomeIcon icon={faForward} />
         <IconCircle />
         <Image
-          src="/images/header.png"
+          src={headerImg}
           alt="Logo"
           width={400}
           height={400}
-          objectFit="cover"
+          priority
+          style={{
+            objectFit: "cover",
+          }}
         />
       </LogoBase>
     </ImageContainer>

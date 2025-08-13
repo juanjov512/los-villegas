@@ -1,22 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
-
 const FooterContainer = styled.div`
   color: white;
   text-align: center;
   display: flex;
   margin: 20px auto 0 auto;
   flex-direction: column;
-  background-color: #2E7D32;
-  border-top: 10px solid #1B5E20;
-
-`;
-
-const WaveSvg = styled.svg`
-  width: 100%;
-  height: auto;
-  border-top: 10px #000;
+  background-color: ${({ theme }) => theme.colors.green[700]};
+  border-top: 2px solid rgb(0, 0, 0, 0.1);
 `;
 
 const FooterContent = styled.div`
@@ -24,9 +16,10 @@ const FooterContent = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 40px 20px 20px;
+  gap: ${({ theme }) => theme.spacing.xl};
 
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    flex-direction: column;
   }
 `;
 
@@ -74,12 +67,11 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 
 export {
   Column,
-  CompanyInfo, 
-  CompanyName, 
-  FooterBottomText, 
-  FooterContainer, 
-  FooterContent, 
+  CompanyInfo,
+  CompanyName,
+  FooterBottomText,
+  FooterContainer,
+  FooterContent,
   Row,
   StyledFontAwesomeIcon,
-  WaveSvg, 
 };

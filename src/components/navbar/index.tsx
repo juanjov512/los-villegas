@@ -1,72 +1,60 @@
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import React, { Fragment, type JSX, useEffect, useState } from "react";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import * as Dialog from "@radix-ui/react-dialog";
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import React from "react";
 
-import Button from "../button";
 import Logo from "../logo";
 import {
-  Hamburger,
   Nav,
-  NavItem,
+  DesktopMenu,
   NavLink,
-  NavList,
-  NavText,
+  MobileTrigger,
+  MobileContent,
+  MobileLink,
   StyledFontAwesomeIcon,
+  NavItem,
 } from "./styles";
 import { type INavbarProps } from "./types";
 
-const Navbar: React.FC<INavbarProps> = ({
-  links,
-}: INavbarProps): JSX.Element => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [menuOpen, setMenuOpen] = React.useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 90 ? true : false);
-    };
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768 ? true : false);
-    };
-
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+const Navbar: React.FC<INavbarProps> = ({ links }) => {
   return (
-    <Nav scrolled={scrolled}>
-      <NavList open={menuOpen}>
-        <Fragment>
-          {links.map((link, index) => (
-            <NavItem key={index}>
-              <NavLink href={link.href}>
-                <NavText>{link.label}</NavText>
-              </NavLink>
+    <Nav>
+      <NavigationMenu.Root>
+        <NavigationMenu.List>
+          <NavigationMenu.Link href={"#home"}>
+            <Logo />
+          </NavigationMenu.Link>
+        </NavigationMenu.List>
+      </NavigationMenu.Root>
+
+      <DesktopMenu>
+        <NavigationMenu.List>
+          {links.map((link, i) => (
+            <NavItem key={i}>
+              <NavLink href={link.href}>{link.label}</NavLink>
             </NavItem>
           ))}
-        </Fragment>
-      </NavList>
-      <NavLink href={"#main"}>
-        <Logo />
-      </NavLink>
-      {isMobile ? (
-        <Hamburger onClick={toggleMenu}>
-          <StyledFontAwesomeIcon open={menuOpen} icon={faChevronDown} />
-        </Hamburger>
-      ) : (
-        <Button text={"Hablar con Ventas"} icon={faWhatsapp} />
-      )}
+        </NavigationMenu.List>
+      </DesktopMenu>
+
+      <Dialog.Root>
+        <MobileTrigger asChild>
+          <StyledFontAwesomeIcon icon={faBars} />
+        </MobileTrigger>
+        <Dialog.Portal>
+          <MobileContent>
+            <VisuallyHidden>
+              <Dialog.Title>Menú de navegación</Dialog.Title>
+            </VisuallyHidden>
+            {links.map((link, i) => (
+              <MobileLink key={i} href={link.href}>
+                {link.label}
+              </MobileLink>
+            ))}
+          </MobileContent>
+        </Dialog.Portal>
+      </Dialog.Root>
     </Nav>
   );
 };

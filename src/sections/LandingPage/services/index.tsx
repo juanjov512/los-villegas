@@ -44,7 +44,7 @@ const Services: React.FC = (): JSX.Element => {
   ];
 
   return (
-    <GridContainer>
+    <GridContainer id={"services"}>
       {services.map(({ icon, text, title }, index) => (
         <Card icon={icon} key={`card-${index}`} title={title} text={text} />
       ))}

@@ -8,7 +8,7 @@ import { CardContainer } from "./styles";
 
 const About: React.FC = (): JSX.Element => {
   return (
-    <Container minHeight={"auto"} id={"about"}>
+    <Container $minHeight={"auto"} id={"about"}>
       <CardContainer>
         <LogoWithText />
         <Description />
