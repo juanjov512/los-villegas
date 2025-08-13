@@ -27,7 +27,6 @@ const LogoWithText: React.FC = () => {
           alt="Logo"
           width={170}
           height={170}
-          placeholder="blur"
           style={{
             position: "absolute",
             top: "50%",

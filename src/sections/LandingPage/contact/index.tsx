@@ -22,7 +22,6 @@ const Contact: React.FC = (): JSX.Element => {
         </Card>
         <Image
           src={PlatanosImg}
-          placeholder="blur"
           alt="Logo"
           fill
           style={{
