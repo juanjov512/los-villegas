@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
   background-color: #fff;
+  scroll-behavior: smooth;
 }
 
 body {

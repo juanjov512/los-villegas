@@ -1,4 +1,5 @@
-import { faForward, faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faForward } from "@fortawesome/free-solid-svg-icons";
 import React, { type JSX } from "react";
 
 import Button from "@/components/button";
@@ -21,7 +22,7 @@ const Description: React.FC = (): JSX.Element => {
     <Container>
       <Title>{title}</Title>
       <ContainerDescription>{text}</ContainerDescription>
-      <Button text={"Contactar Ahora"} icon={faPhoneFlip} />
+      <Button text={"Contactar Ahora"} icon={faWhatsapp} />
       <StyledFontAwesomeIcon icon={faForward} />
     </Container>
   );

@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono, Pattaya, Poppins } from "next/font/google";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import StyledComponentsRegistry from "@/lib/styled-components.registry";
 
 import type { Metadata } from "next";
 
@@ -40,13 +42,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${pattaya.variable}`}
-        >
-          {children}
-        </body>
-      </ThemeProvider>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${pattaya.variable}`}
+      >
+        <StyledComponentsRegistry>
+          <ThemeProvider>{children}</ThemeProvider>
+        </StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

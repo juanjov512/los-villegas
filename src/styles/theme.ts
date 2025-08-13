@@ -58,14 +58,14 @@ export const theme = {
       900: "#7f1d1d",
     },
     green: {
-      50: "#f4faf4", // casi blanco
-      100: "#e6f4e6", // verde muy claro (tu color)
+      50: "#f4faf4",
+      100: "#e6f4e6",
       200: "#c5e6c8",
       300: "#a2d8a6",
       400: "#77c879",
-      500: "#4fb554", // verde medio (tu color)
+      500: "#4fb554",
       600: "#43a047",
-      700: "#2e7d32", // verde oscuro (tu color)
+      700: "#2e7d32",
       800: "#255f29",
       900: "#1a441d",
     },

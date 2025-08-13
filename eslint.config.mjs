@@ -1,22 +1,33 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+import { FlatCompat } from "@eslint/eslintrc";
+import nextPlugin from "@next/eslint-plugin-next";
+import typescriptParser from "@typescript-eslint/parser";
 import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginPrettier from "eslint-plugin-prettier";
-import tsParser from "@typescript-eslint/parser";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import nextPlugin from "@next/eslint-plugin-next";
+import tseslint from "typescript-eslint";
 
-export default [
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+export default tseslint.config(
   {
-    files: ["**/*.{ts,tsx,js,jsx}"],
+    extends: [
+      ...tseslint.configs.recommended,
+      ...compat.extends("plugin:@next/next/core-web-vitals"),
+    ],
     languageOptions: {
-      parser: tsParser,
-      ecmaVersion: "latest",
-      sourceType: "module"
+      parser: typescriptParser,
     },
     plugins: {
-      "@typescript-eslint": tsPlugin,
-      import: eslintPluginImport,
       prettier: eslintPluginPrettier,
-      next: nextPlugin
+      "@next/next": nextPlugin,
+      import: eslintPluginImport,
     },
     rules: {
       "prettier/prettier": [
@@ -24,16 +35,17 @@ export default [
         {
           endOfLine: "lf",
           semi: true,
-          singleQuote: false
-        }
+          singleQuote: false,
+        },
       ],
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/consistent-type-imports": [
         "error",
         {
           prefer: "type-imports",
-          fixStyle: "inline-type-imports"
-        }
+          disallowTypeAnnotations: true,
+          fixStyle: "separate-type-imports",
+        },
       ],
       "import/order": [
         "error",
@@ -43,19 +55,22 @@ export default [
             "external",
             "internal",
             ["parent", "sibling", "index"],
-            "type"
+            "type",
           ],
           pathGroups: [
             {
               pattern: "@/**",
-              group: "internal"
-            }
+              group: "internal",
+            },
           ],
           pathGroupsExcludedImportTypes: ["builtin"],
           alphabetize: { order: "asc", caseInsensitive: true },
-          "newlines-between": "always"
-        }
-      ]
-    }
-  }
-];
+          "newlines-between": "always",
+        },
+      ],
+    },
+  },
+  {
+    ignores: [".next/*", "node_modules/"],
+  },
+);

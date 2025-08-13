@@ -19,7 +19,7 @@ const Home = (): JSX.Element => {
   ];
 
   return (
-    <div>
+    <>
       <main>
         <Navbar links={links} />
         <Hero />
@@ -29,7 +29,7 @@ const Home = (): JSX.Element => {
         <Answers />
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

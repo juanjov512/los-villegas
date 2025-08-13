@@ -10,6 +10,7 @@ const Container = styled.div`
   gap: ${({ theme }) => theme.spacing.xl};
   box-sizing: border-box;
   width: 100%;
+  max-width: 40rem;
   min-height: 30rem;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.borderRadius.xl};

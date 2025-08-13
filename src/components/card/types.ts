@@ -1,4 +1,4 @@
-import { IconDefinition } from "@fortawesome/free-regular-svg-icons";
+import type { IconDefinition } from "@fortawesome/free-regular-svg-icons";
 
 interface ICardProps {
   title: string;

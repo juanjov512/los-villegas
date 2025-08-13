@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Container = styled(AccordionPrimitive.Root)`
   width: 100%;
@@ -43,6 +43,11 @@ const Content = styled(AccordionPrimitive.Content)`
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: 500;
   line-height: 160%;
+
+  animation: ${keyframes`
+      from { opacity: 0.5; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    `} 200ms ease-out;
 `;
 
 export { ChevronIcon, Container, Content, Trigger };

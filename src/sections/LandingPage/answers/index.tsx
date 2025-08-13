@@ -36,15 +36,15 @@ const Answers: React.FC = (): JSX.Element => {
   ];
 
   return (
-    <MainContainer id={"faq"} minHeight={"auto"}>
+    <MainContainer id={"faq"} $minHeight={"auto"}>
       <Container>
         <TextContainer>
           <Title>{title}</Title>
         </TextContainer>
         <ColumnContainer>
           {answers.map(({ text, title }, index) => (
-            <Container>
-              <Accordion key={index} content={text} title={title} />
+            <Container key={`answer-${index}`}>
+              <Accordion content={text} title={title} />
             </Container>
           ))}
         </ColumnContainer>
