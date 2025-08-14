@@ -10,28 +10,37 @@ interface IAnswer {
   text: string;
 }
 
+const FOUNDATION_YEAR = 1973;
+
 const Answers: React.FC = (): JSX.Element => {
   const title = "Preguntas Frecuentes";
+  const currentYear = new Date().getFullYear();
+  const yearsInBusiness = currentYear - FOUNDATION_YEAR;
   const answers: IAnswer[] = [
     {
-      title: "¿De dónde provienen los plátanos?",
-      text: `Nuestros plátanos provienen de diversas regiones de Antioquia,
-      asegurando la mejor calidad y frescura.`,
+      title: "¿Cómo garantizan la frescura de los plátanos?",
+      text: `Seleccionamos cada fruto directamente en las fincas, asegurando 
+      que llegue en su punto óptimo de maduración.`,
     },
     {
-      title: "¿Realizan entregas a domicilio?",
-      text: `Sí, realizamos entregas directas a restaurantes, supermercados y
-      tiendas en Medellín y sus alrededores.`,
+      title: "¿Pueden cumplir con entregas rápidas y puntuales?",
+      text: `Sí, contamos con una logística optimizada que nos permite llegar 
+      siempre a tiempo.`,
     },
     {
-      title: "¿Cuál es el tiempo de entrega?",
-      text: `El tiempo de entrega varía según la ubicación, pero generalmente
-      los pedidos se entregan en un plazo de 24 a 48 horas.`,
+      title: "¿Qué tipo de relación ofrecen a sus clientes?",
+      text: `Construimos relaciones de confianza, asegurando un suministro 
+      constante y estable para su negocio.`,
     },
     {
-      title: "¿Qué métodos de pago aceptan?",
-      text: `Aceptamos transferencias bancarias y pagos en efectivo al momento
-      de la entrega.`,
+      title: "¿Tienen experiencia en el sector agroalimentario?",
+      text: `Sí, contamos con más de ${yearsInBusiness} años abasteciendo a 
+      clientes con calidad garantizada.`,
+    },
+    {
+      title: "¿Puedo conocer el origen de los plátanos que me entregan?",
+      text: `Por supuesto, ofrecemos trazabilidad total desde el campo hasta 
+      su negocio.`,
     },
   ];
 

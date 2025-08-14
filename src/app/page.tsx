@@ -20,8 +20,8 @@ const Home = (): JSX.Element => {
 
   return (
     <>
+      <Navbar links={links} />
       <main>
-        <Navbar links={links} />
         <Hero />
         <About />
         <Services />

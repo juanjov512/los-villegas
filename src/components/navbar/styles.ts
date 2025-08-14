@@ -16,6 +16,10 @@ const Nav = styled.header`
   z-index: 4;
   transition: all 0.5s ease-in-out;
   border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0.625rem 3rem;
+  }
 `;
 
 const DesktopMenu = styled(NavigationMenu.Root)`

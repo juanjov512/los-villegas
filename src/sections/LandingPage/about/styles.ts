@@ -8,7 +8,7 @@ const CardContainer = styled.div`
   align-items: center;
   gap: ${({ theme }) => theme.spacing["3xl"]};
 
-  @media (max-width: 1050px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: column-reverse;
   }
 `;

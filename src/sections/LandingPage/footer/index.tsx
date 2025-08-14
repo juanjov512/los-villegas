@@ -25,14 +25,14 @@ interface IRow {
 const Footer: React.FC = (): JSX.Element => {
   const rows: IRow[] = [
     {
-      title: "+57 310 503 5336",
+      title: "+57 310 358 1467",
       icon: faPhone,
-      href: "tel:+573105035336",
+      href: "tel:+573103581467",
     },
     {
-      title: "ventas@losvillegas.com",
+      title: "proveedoralosvillegas@gmail.com",
       icon: faEnvelope,
-      href: "mailto:ventas@losvillegas.com",
+      href: "mailto:proveedoralosvillegas@gmail.com",
     },
     {
       title: "Central Mayorista, Bloque Naranja, Local 0116",
@@ -45,7 +45,11 @@ const Footer: React.FC = (): JSX.Element => {
     <FooterContainer>
       <FooterContent>
         <Column>
-          <CompanyName>LOS VILLEGAS</CompanyName>
+          <CompanyName>
+            LOS
+            <br />
+            VILLEGAS
+          </CompanyName>
         </Column>
         <Column>
           {rows.map((row, index) => (

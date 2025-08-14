@@ -20,26 +20,41 @@ const Container = styled.div`
   max-width: 560px;
   width: 100%;
   gap: 36px;
+  height: 100vh;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    gap: 50px;
+  }
 `;
 
-const Title = styled.p`
+const Title = styled.h1`
   font-family: Pattaya;
-  font-size: 64px;
+  font-size: 7vh;
   font-weight: 400;
-  line-height: 89px;
+  line-height: 7vh;
   letter-spacing: 0px;
   text-align: left;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    line-height: 6vh;
+    text-align: center;
+  }
 `;
 
-const Description = styled.p`
+const Description = styled.h2`
   font-family: Poppins;
-  font-size: 24px;
+  font-size: 2.75vh;
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0px;
   text-align: left;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    line-height: 3.5vh;
+    text-align: center;
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -53,7 +68,13 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   animation: ${slideIn} 1s ease-out;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    left: 175px;
+    left: calc(225px * 0.85);
+    height: calc(52.5px * 0.85);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    left: calc(225px * 0.6);
+    height: calc(52.5px * 0.6);
   }
 `;
 

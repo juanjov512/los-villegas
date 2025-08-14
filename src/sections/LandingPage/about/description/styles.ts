@@ -12,24 +12,19 @@ const Container = styled.div`
 `;
 
 const Title = styled.p`
-  color: #2e7d32;
+  color: ${({ theme }) => theme.colors.green[700]};
   font-family: Pattaya;
   font-size: 48px;
   font-weight: 400;
-  line-height: 67px;
+  line-height: 110%;
   letter-spacing: 0px;
   text-align: left;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: 38px;
+    line-height: 100%;
+  }
 `;
 
-const Description = styled.p`
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 160%;
-  letter-spacing: 0px;
-  text-align: left;
-  margin: 0;
-`;
-
-export { Container, Description, Title };
+export { Container, Title };

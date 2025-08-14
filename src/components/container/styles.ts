@@ -20,8 +20,7 @@ const Container = styled.div<IContainerProps>`
   margin-bottom: ${({ theme }) => theme.spacing["3xl"]};
   scroll-margin-top: 7rem;
 
-  @media (max-width: 1050px) {
-    margin-top: 40px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: column;
   }
 `;

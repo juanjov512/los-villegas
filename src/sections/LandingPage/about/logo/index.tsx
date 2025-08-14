@@ -1,9 +1,13 @@
-import Image from "next/image";
 import React from "react";
 
 import PlantainLogoImg from "@/assets/images/plantain_logo.png";
 
-import { Container, CircleTextContainer, CircleTextSVG } from "./styles";
+import {
+  Container,
+  CircleTextContainer,
+  CircleTextSVG,
+  ImageTag,
+} from "./styles";
 
 const LogoWithText: React.FC = () => {
   return (
@@ -22,7 +26,7 @@ const LogoWithText: React.FC = () => {
             </textPath>
           </text>
         </CircleTextSVG>
-        <Image
+        <ImageTag
           src={PlantainLogoImg}
           alt="Logo"
           width={170}
