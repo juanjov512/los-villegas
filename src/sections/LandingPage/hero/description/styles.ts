@@ -20,11 +20,7 @@ const Container = styled.div`
   max-width: 560px;
   width: 100%;
   gap: 36px;
-  height: 100vh;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    gap: 50px;
-  }
+  height: 85vh;
 `;
 
 const Title = styled.h1`
