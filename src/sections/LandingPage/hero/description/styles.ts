@@ -21,34 +21,48 @@ const Container = styled.div`
   width: 100%;
   gap: 36px;
   height: 85vh;
+
+  @media (max-height: 600px) {
+    margin-top: 20px;
+    height: auto;
+    gap: 18px;
+  }
 `;
 
 const Title = styled.h1`
   font-family: Pattaya;
-  font-size: 7vh;
+  font-size: 64px;
   font-weight: 400;
-  line-height: 7vh;
+  line-height: 64px;
   letter-spacing: 0px;
   text-align: left;
   margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    line-height: 6vh;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: 40px;
+    line-height: 40px;
     text-align: center;
   }
 `;
 
 const Description = styled.h2`
   font-family: Poppins;
-  font-size: 2.75vh;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 36px;
+  line-height: 32px;
   letter-spacing: 0px;
   text-align: left;
   margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    line-height: 3.5vh;
+    font-size: 18px;
+    line-height: 24px;
     text-align: center;
   }
 `;
