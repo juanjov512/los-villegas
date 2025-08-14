@@ -10,15 +10,20 @@ const Container = styled.div`
   gap: ${({ theme }) => theme.spacing.xl};
   box-sizing: border-box;
   width: 100%;
-  max-width: 40rem;
-  min-height: 30rem;
+  max-width: 35rem;
+  min-height: auto;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   transition: 0.3s ease-in-out;
   transition-property: background, transform;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding: ${({ theme }) => theme.spacing.xl};
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
+
   &:hover {
-    background: #f5f7f2;
+    background: ${({ theme }) => theme.colors.green[50]};
     transform: scale(1.05);
   }
 `;
@@ -34,9 +39,17 @@ const Title = styled.p`
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  color: #396b03;
+  color: ${({ theme }) => theme.colors.green[700]};
   height: 90px;
   width: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    height: 80px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 70px;
+  }
 `;
 
 export { Container, Title, StyledFontAwesomeIcon };

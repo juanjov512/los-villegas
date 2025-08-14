@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -20,6 +21,13 @@ const CircleTextContainer = styled.div`
   position: relative;
   width: 350px;
   height: 350px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 50vw;
+    height: 50vw;
+    max-width: 290px;
+    max-height: 290px;
+  }
 `;
 
 const CircleTextSVG = styled.svg`
@@ -31,4 +39,20 @@ const CircleTextSVG = styled.svg`
   animation: ${rotate} 20s linear infinite;
 `;
 
-export { Container, CircleTextContainer, CircleTextSVG };
+const ImageTag = styled(Image)`
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 25vw;
+    height: 25vw;
+    max-width: 150px;
+    max-height: 150px;
+  }
+`;
+
+export { Container, CircleTextContainer, CircleTextSVG, ImageTag };

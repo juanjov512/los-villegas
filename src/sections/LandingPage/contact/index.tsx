@@ -1,3 +1,4 @@
+import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import React, { type JSX } from "react";
 
@@ -8,9 +9,9 @@ import { Container } from "@/components/container/styles";
 import { Card, ImageContainer, Title, Text } from "./styles";
 
 const Contact: React.FC = (): JSX.Element => {
-  const text = `Si tienes alguna pregunta o deseas realizar un pedido, no dudes
-  en contactarnos.`;
-  const title = "!Llévanos en tu agenda!";
+  const title = "Siempre disponibles para su negocio";
+  const text =
+    "Un proveedor de confianza siempre a la mano. Guarde nuestro contacto ahora.";
 
   return (
     <Container id={"contact"} $minHeight={"25rem"}>
@@ -18,7 +19,14 @@ const Contact: React.FC = (): JSX.Element => {
         <Card>
           <Title>{title}</Title>
           <Text>{text}</Text>
-          <Button text={"Agendar"} color={"secondary"} size={"2xl"} />
+          <a href="tel:+573103581467" target="_blank" rel="noopener noreferrer">
+            <Button
+              text={"Agendar"}
+              color={"secondary"}
+              icon={faAddressBook}
+              size={"2xl"}
+            />
+          </a>
         </Card>
         <Image
           src={PlatanosImg}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
+  max-width: 1032px;
   height: 25rem;
   overflow: hidden;
   margin: 0 auto;
@@ -13,6 +14,10 @@ const ImageContainer = styled.div`
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgb(46, 125, 50), rgba(0, 0, 0, 0) 100%);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    max-width: 560px;
   }
 `;
 
@@ -51,6 +56,10 @@ const Text = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes.lg};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: ${({ theme }) => theme.fontSizes.md};
   }
 `;
 

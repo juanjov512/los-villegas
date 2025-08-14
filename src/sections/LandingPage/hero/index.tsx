@@ -7,7 +7,7 @@ import { Image } from "./logo";
 
 const Hero: React.FC = (): JSX.Element => {
   return (
-    <Container id={"home"} $padding={"6rem 0 0"}>
+    <Container id={"home"}>
       <Description />
       <Image />
     </Container>

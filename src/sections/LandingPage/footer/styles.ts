@@ -20,6 +20,7 @@ const FooterContent = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.lg};
   }
 `;
 
@@ -30,12 +31,12 @@ const Column = styled.div`
   align-items: center;
 `;
 
-const CompanyName = styled.h2`
+const CompanyName = styled.h3`
   font-family: Poppins;
   margin: 0;
   font-size: 48px;
   font-weight: 600;
-  line-height: 89px;
+  line-height: 110%;
   letter-spacing: 2px;
 `;
 
@@ -62,7 +63,8 @@ const FooterBottomText = styled.div`
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   color: white;
-  height: 20px;
+  height: 24px;
+  width: auto;
 `;
 
 export {

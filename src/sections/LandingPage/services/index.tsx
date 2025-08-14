@@ -1,7 +1,7 @@
 import {
   type IconDefinition,
-  faBox,
-  faStore,
+  faBoxOpen,
+  faSeedling,
   faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 import React, { type JSX } from "react";
@@ -18,28 +18,21 @@ interface IService {
 const Services: React.FC = (): JSX.Element => {
   const services: IService[] = [
     {
+      icon: faSeedling,
+      title: "Recolección en origen",
+      text: `Seleccionamos plátanos en su punto ideal de maduración 
+      directamente en el campo.`,
+    },
+    {
+      icon: faBoxOpen,
+      title: "Clasificación y empaque",
+      text: `Procesamos y empaquetamos siguiendo estándares de calidad.`,
+    },
+    {
       icon: faTruck,
-      title: "Transporte Confiable",
-      text: `Nos encargamos de recoger los plátanos directamente del campo y
-      transportarlos a nuestro centro de distribución en Medellín. Contamos con
-      una flota de vehículos adaptados para mantener la frescura y calidad del
-      producto durante todo el trayecto.`,
-    },
-    {
-      icon: faBox,
-      title: "Empaque Seguro",
-      text: `En nuestro centro de distribución, los plátanos son cuidadosamente
-      seleccionados y empacados bajo estrictas normas de higiene y calidad.
-      Garantizamos la frescura del producto hasta que llega a su destino
-      final.`,
-    },
-    {
-      icon: faStore,
-      title: "Entrega Directa y Puntual",
-      text: `Realizamos entregas directas en Medellín y sus alrededores.
-      Nuestro equipo de logística asegura que los pedidos lleguen a tiempo y en
-      perfectas condiciones, cumpliendo con las necesidades específicas de su
-      negocio.`,
+      title: "Distribución ágil",
+      text: `Transporte seguro y rápido desde nuestro centro de ditribución 
+      hasta su ubicación.`,
     },
   ];
 

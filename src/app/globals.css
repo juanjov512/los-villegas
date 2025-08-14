@@ -26,9 +26,10 @@ body {
 }
 
 main {
-  padding: 0 3rem;
+  padding: 91px 3rem 0;
   max-width: 1200px;
   margin: 0 auto;
+  top: 94px;
 }
 
 * {

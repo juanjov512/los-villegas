@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 
 const slideIn = keyframes`
@@ -28,9 +29,11 @@ const LogoBase = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1050px) {
-    width: 460px;
-    height: 460px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 70vw;
+    height: 70vw;
+    max-width: 360px;
+    max-height: 360px;
   }
 `;
 
@@ -50,6 +53,14 @@ const IconCircle = styled.div`
     opacity: 0.85;
     transform: scale(1.05);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 15vw;
+    height: 15vw;
+    top: 15%;
+    max-width: 75px;
+    max-height: 75px;
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -63,13 +74,25 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   z-index: 3;
 
   animation: ${slideIn} 1s ease-out;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    left: 10%;
+    height: 7vw;
+    max-height: 40px;
+  }
 `;
 
-const ImageTag = styled.img`
-  position: relative;
-  max-width: 100%;
-  height: auto;
-  z-index: 1;
+const ImageTag = styled(Image)`
+  width: 440px;
+  height: 440px;
+  object-fit: cover;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 55vw;
+    height: 55vw;
+    max-width: 290px;
+    max-height: 290px;
+  }
 `;
 
 export {
