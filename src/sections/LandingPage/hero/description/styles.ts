@@ -45,8 +45,8 @@ const Title = styled.h1`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 42px;
+    line-height: 42px;
     text-align: center;
   }
 `;
