@@ -1,16 +1,8 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const rotate = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-`;
-
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,13 +22,12 @@ const CircleTextContainer = styled.div`
   }
 `;
 
-const CircleTextSVG = styled.svg`
+const CircleTextSVG = styled(motion.svg)`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  animation: ${rotate} 20s linear infinite;
 `;
 
 const ImageTag = styled(Image)`

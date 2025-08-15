@@ -1,4 +1,5 @@
-import React from "react";
+import { useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 
 import PlantainLogoImg from "@/assets/images/plantain_logo.png";
 
@@ -10,10 +11,19 @@ import {
 } from "./styles";
 
 const LogoWithText: React.FC = () => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+
   return (
-    <Container>
+    <Container ref={ref}>
       <CircleTextContainer>
-        <CircleTextSVG viewBox="0 0 100 100">
+        <CircleTextSVG style={{ rotate }} viewBox="0 0 100 100">
           <defs>
             <path
               id="circlePath"
@@ -26,18 +36,7 @@ const LogoWithText: React.FC = () => {
             </textPath>
           </text>
         </CircleTextSVG>
-        <ImageTag
-          src={PlantainLogoImg}
-          alt="Logo"
-          width={170}
-          height={170}
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
+        <ImageTag src={PlantainLogoImg} alt="Logo" />
       </CircleTextContainer>
     </Container>
   );

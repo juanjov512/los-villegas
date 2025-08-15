@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
+import Image from "next/image";
 import styled from "styled-components";
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   position: relative;
   width: 100%;
   max-width: 1032px;
@@ -25,8 +27,7 @@ const Card = styled.div`
   position: absolute;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 36px;
+  justify-content: space-evenly;
   width: 100%;
   height: 100%;
   padding: ${({ theme }) => theme.spacing["2xl"]};
@@ -63,4 +64,19 @@ const Text = styled.p`
   }
 `;
 
-export { Card, ImageContainer, Title, Text };
+const StyledImage = styled(Image)`
+  object-fit: cover;
+  object-position: center;
+  animation: zoom 12s ease-in-out infinite alternate;
+
+  @keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+`;
+
+export { Card, ImageContainer, StyledImage, Title, Text };

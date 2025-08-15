@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 
@@ -13,7 +14,7 @@ const slideIn = keyframes`
   }
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;

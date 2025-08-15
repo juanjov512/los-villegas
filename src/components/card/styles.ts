@@ -25,6 +25,7 @@ const Container = styled.div`
   &:hover {
     background: ${({ theme }) => theme.colors.green[50]};
     transform: scale(1.05);
+    box-shadow: "0px 15px 30px rgba(0,0,0,0.1)";
   }
 `;
 
